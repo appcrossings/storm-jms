@@ -24,7 +24,6 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
-
 import org.apache.storm.jms.JmsProvider;
 
 public class MockJmsProvider implements JmsProvider {

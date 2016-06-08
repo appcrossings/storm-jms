@@ -17,18 +17,25 @@
  */
 package org.apache.storm.jms.trident;
 
+import java.io.Serializable;
+import java.util.List;
+
+import javax.jms.Connection;
+import javax.jms.ConnectionFactory;
+import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageProducer;
+import javax.jms.Session;
+
 import org.apache.storm.jms.JmsProvider;
-import backtype.storm.topology.FailedException;
+import org.apache.storm.topology.FailedException;
+import org.apache.storm.trident.operation.TridentCollector;
+import org.apache.storm.trident.state.State;
+import org.apache.storm.trident.tuple.TridentTuple;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import storm.trident.operation.TridentCollector;
-import storm.trident.state.State;
-import storm.trident.tuple.TridentTuple;
 
-import javax.jms.*;
-import java.io.Serializable;
-import java.lang.IllegalStateException;
-import java.util.List;
 
 public class JmsState implements State {
 
